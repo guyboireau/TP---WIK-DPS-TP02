@@ -1,0 +1,8 @@
+Pour lancer l'API il faut exécuter les commandes suivantes.
+
+npm install
+setx PING_LISTEN_PORT "Numéro du port"
+npm start
+
+Le WebService permet de récupérer les Headers de la requête sur /ping donc une réponse.
+Dans le cas où on tente une requête autre que /ping on obtiendra une erreur 404 qui nous indiquera que l'adresse n'est pas trouvable
