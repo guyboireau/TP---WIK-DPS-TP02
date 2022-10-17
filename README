@@ -6,3 +6,9 @@ npm start
 
 Le WebService permet de récupérer les Headers de la requête sur /ping donc une réponse.
 Dans le cas où on tente une requête autre que /ping on obtiendra une erreur 404 qui nous indiquera que l'adresse n'est pas trouvable
+
+Pour executer le webservice avec docker 
+
+docker build . -t projectdevop2
+docker run -ti -e PING_LISTEN_PORT=3000 -p 80:3000 projectdevop2 
+Le webservice est utilisable et fonctionnel
