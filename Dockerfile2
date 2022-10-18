@@ -1,7 +1,6 @@
 FROM node:slim as builder
 COPY . . 
-RUN npm install && npx tsc   
-
+RUN npm install && npx tsc
 
 FROM node:slim
 COPY --from=builder . .
