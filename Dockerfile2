@@ -1,8 +1,10 @@
 FROM node:slim as builder
 COPY . . 
-RUN npm install && npx tsc && useradd -r guy   
-USER guy
+RUN npm install && npx tsc   
+
 
 FROM node:slim
 COPY --from=builder . .
+RUN useradd -r guy
+USER guy
 CMD node build/index.js
