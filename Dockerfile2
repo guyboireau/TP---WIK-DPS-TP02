@@ -1,11 +1,8 @@
 FROM node:16.17 as builder
-COPY . .
-RUN npm install
-RUN npx tsc
-RUN useradd -r guy  
+COPY . . 
+RUN npm install && npx tsc && useradd -r guy   
 USER guy
 
 FROM node:16.17
 COPY --from=builder . .
-USER guy
 CMD node build/index.js
